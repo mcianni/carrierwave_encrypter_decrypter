@@ -35,7 +35,7 @@ module Openssl
       buf = ""
 
       original_file_path  = obj.send(mounted_as).root.join obj.send(mounted_as).path
-      encrypted_file_path = original_file_path + '.enc'
+      encrypted_file_path = original_file_path.to_s + '.enc'
 
       File.open(original_file_path, "wb") do |outf|
         File.open(encrypted_file_path, "rb") do |inf|
